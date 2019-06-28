@@ -110,11 +110,13 @@
 
 		scene.enter = ()=>{
 			//paused = false;
+			console.log("enter:", this.name);
 			this.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
+			console.log("exit:", this.name);
 			this.visible = false;
 		};
 
