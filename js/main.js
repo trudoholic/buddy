@@ -5,7 +5,7 @@
 
 	let mainContainer, gameScene, gameOverScene, gameInfo, gamePaused;
 	let message, info, paused, model, score, tiles = [];
-	let world, mrBig, buddy, goDown, DH = 250;
+	let world, mrBig, buddy, goDown, DH = 250, h = 0;
 
 	PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 	const app = new PIXI.Application({
@@ -117,7 +117,6 @@
 		mrBig.width = 100;
 		mrBig.height = 100;
 		mrBig.anchor.set(0.5);
-		//mrBig.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		mrBig.position.set(0, 0);
 		world.addChild(mrBig);
 
@@ -126,7 +125,6 @@
 		buddy.width = 50;
 		buddy.height = 50;
 		buddy.anchor.set(0.5);
-		//buddy.position.set(logicalWidth / 2, logicalHeight - H0);
 		buddy.position.set(0, 0);
 		world.addChild(buddy);
 
@@ -319,31 +317,33 @@
 		paused = false;
 		goDown = false;
 		DH = 250;
-		//buddy.position.set(logicalWidth / 2, logicalHeight - H0);
-		buddy.position.set(0, -H0);
+		h = H0;
+		buddy.y = -h;
 		gameLoop();
 	}
 
 	function gameLoop() {
 		if (paused) return;
 		requestAnimationFrame(gameLoop);
-		buddy.y += (goDown? 1: -1) * 5;
 
-		//(buddy.y < 0)? world.scale.set(.5): world.scale.set(1);
-		(buddy.y < - logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
+		//buddy.y += (goDown? 1: -1) * 5;
+		h += (goDown? -1: 1) * 5;
+		buddy.y = -h;
 
-		//if (buddy.y < logicalHeight - H0 - DH) goDown = true;
-		//else if (buddy.y > logicalHeight) setScene(gamePaused);
+		//(buddy.y < - logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
+		//if (buddy.y <  - H0 - DH) goDown = true;
+		//else if (buddy.y > 0) setScene(gamePaused);
 
-		if (buddy.y <  - H0 - DH) goDown = true;
-		else if (buddy.y > 0) setScene(gamePaused);
+		(h > logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
+		if (h >  H0 + DH) goDown = true;
+		else if (h < 0) setScene(gamePaused);
 
 		//app.renderer.render(stage);
 	}
 
 	function toss() {
-		//if (buddy.y > logicalHeight - H0)
-		if (buddy.y > - H0)
+		//if (buddy.y > - H0)
+		if (h < H0)
 		{
 			goDown = false;
 			DH += 100;
