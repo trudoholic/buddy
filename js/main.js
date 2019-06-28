@@ -211,7 +211,7 @@
 			//gamePaused.visible = false;
 			//resetGame();
 
-			setScene(gameInfo);
+			setScene(gameScene);
 		};
 
 		let label2 = new PIXI.Text("Новая", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
@@ -254,7 +254,7 @@
 		btn.click = ()=>{
 			//resetGame();
 
-			setScene(gameInfo);
+			setScene(gameScene);
 		};
 
 		let label = new PIXI.Text("Play Game", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
