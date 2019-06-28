@@ -132,7 +132,7 @@
 		buddy.height = 50;
 		buddy.anchor.set(0.5);
 		//buddy.position.set(logicalWidth / 2, logicalHeight - H0);
-		buddy.position.set(0, H0);
+		buddy.position.set(0, 0);
 		world.addChild(buddy);
 
 		return scene;
