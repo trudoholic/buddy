@@ -36,7 +36,7 @@
 		if (curScene) curScene.exit();
 		curScene = scene;
 		if (curScene) curScene.enter();
-		console.console.log(paused);
+		console.log(paused);
 	}
 
 	PIXI.loader
