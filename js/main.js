@@ -178,7 +178,7 @@
 			scene.visible = false;
 		};
 
-		let t = new PIXI.Text("Пауза...", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		let t = new PIXI.Text("Счет / Рекорд", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		t.anchor.set(0.5);
 		t.position.set(logicalWidth / 2, 64);
 		scene.addChild(t);
