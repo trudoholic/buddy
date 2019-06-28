@@ -58,6 +58,8 @@
 		gameScene = addGameScene();
 		gameOverScene = addGameOverScene();
 		paused = true;
+
+		setScene(gameScene);
 	}
 
 	function addGameScene() {
