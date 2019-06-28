@@ -108,12 +108,16 @@
 		mrBig.width = 100;
 		mrBig.height = 100;
 		mrBig.anchor.set(0.5);
+		mrBig.position.set(logicalWidth / 2, 50);
+		scene.addChild(mrBig);
 
 		buddy = new PIXI.Sprite(PIXI.Texture.WHITE);
 		buddy.tint = 0xff0000;
 		buddy.width = 50;
 		buddy.height = 50;
 		buddy.anchor.set(0.5);
+		buddy.position.set(logicalWidth / 2, 50);
+		scene.addChild(buddy);
 
 		return scene;
 	}
