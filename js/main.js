@@ -106,7 +106,7 @@
 		//scene.addChild(label);
 
 		world = new PIXI.Container();
-		world.anchor.set(0.5, 1);
+		//world.anchor.set(0.5, 1);
 		world.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		scene.addChild(world);
 
