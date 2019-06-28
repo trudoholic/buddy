@@ -5,7 +5,7 @@
 
 	let mainContainer, gameScene, gameOverScene, gameInfo, gamePaused;
 	let message, info, paused, model, score, tiles = [];
-	let mrBig, buddy, goDown, DH = 250;
+	let world, mrBig, buddy, goDown, DH = 250;
 
 	PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 	const app = new PIXI.Application({
@@ -105,13 +105,16 @@
 		label.position.set(logicalWidth / 2, 150);
 		//scene.addChild(label);
 
+		world = new PIXI.Container();
+		scene.addChild(world);
+
 		mrBig = new PIXI.Sprite(PIXI.Texture.WHITE);
 		mrBig.tint = 0x006600;
 		mrBig.width = 100;
 		mrBig.height = 100;
 		mrBig.anchor.set(0.5);
 		mrBig.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
-		scene.addChild(mrBig);
+		world.addChild(mrBig);
 
 		buddy = new PIXI.Sprite(PIXI.Texture.WHITE);
 		buddy.tint = 0xff0000;
@@ -119,7 +122,7 @@
 		buddy.height = 50;
 		buddy.anchor.set(0.5);
 		buddy.position.set(logicalWidth / 2, logicalHeight - H0);
-		scene.addChild(buddy);
+		world.addChild(buddy);
 
 		return scene;
 	}
@@ -318,6 +321,9 @@
 		if (paused) return;
 		requestAnimationFrame(gameLoop);
 		buddy.y += (goDown? 1: -1) * 5;
+
+		(buddy.y < 0)? world.scale.set(.5): world.scale.set(1);
+
 		if (buddy.y < logicalHeight - H0 - DH) goDown = true;
 		else if (buddy.y > logicalHeight) setScene(gamePaused);
 		//app.renderer.render(stage);
