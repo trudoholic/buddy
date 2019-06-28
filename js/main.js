@@ -55,6 +55,16 @@
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
 
+		scene.enter = ()=>{
+			//paused = false;
+			this.visible = true;
+		};
+
+		scene.exit = ()=>{
+			//paused = true;
+			this.visible = false;
+		};
+
 		gameInfo = addGameInfo();
 		gamePaused = addGamePaused();
 
@@ -66,6 +76,16 @@
 		mainContainer.addChild(scene);
 		scene.visible = false;
 
+		scene.enter = ()=>{
+			//paused = false;
+			this.visible = true;
+		};
+
+		scene.exit = ()=>{
+			//paused = true;
+			this.visible = false;
+		};
+
 		info = new PIXI.Text("Score: 0", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		info.anchor.set(0.5);
 		info.position.set(logicalWidth / 2, 64);
@@ -76,8 +96,6 @@
 		btn.position.set(logicalWidth / 2, 150);
 		scene.addChild(btn);
 
-		//btn.buttonMode = true;
-		//btn.interactive = true;
 		btn.click = ()=>{
 			paused = true;
 			gameInfo.visible = false;
@@ -97,6 +115,16 @@
 		mainContainer.addChild(scene);
 		scene.visible = false;
 
+		scene.enter = ()=>{
+			//paused = false;
+			this.visible = true;
+		};
+
+		scene.exit = ()=>{
+			//paused = true;
+			this.visible = false;
+		};
+
 		let t = new PIXI.Text("Paused...", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		t.anchor.set(0.5);
 		t.position.set(logicalWidth / 2, 64);
@@ -107,8 +135,6 @@
 		btn1.position.set(logicalWidth / 2 - 120, 150);
 		scene.addChild(btn1);
 
-		//btn1.buttonMode = true;
-		//btn1.interactive = true;
 		btn1.click = ()=>{
 			paused = false;
 			gameInfo.visible = true;
@@ -125,8 +151,6 @@
 		btn2.position.set(logicalWidth / 2 + 120, 150);
 		scene.addChild(btn2);
 
-		//btn2.buttonMode = true;
-		//btn2.interactive = true;
 		btn2.click = ()=>{
 			gamePaused.visible = false;
 			resetGame();
@@ -144,6 +168,16 @@
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
 
+		scene.enter = ()=>{
+			//paused = false;
+			this.visible = true;
+		};
+
+		scene.exit = ()=>{
+			//paused = true;
+			this.visible = false;
+		};
+
 		message = new PIXI.Text("New Game", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		message.anchor.set(0.5);
 		message.position.set(logicalWidth / 2, 64);
@@ -154,8 +188,6 @@
 		btn.position.set(logicalWidth / 2, 150);
 		scene.addChild(btn);
 
-		//btn.buttonMode = true;
-		//btn.interactive = true;
 		btn.click = ()=>{
 			resetGame();
 		};
