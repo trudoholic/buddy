@@ -1,6 +1,8 @@
 // annonymouse function to put all variables local scope by default.
 (function(){
 
+	const H0 = 250;
+
 	let mainContainer, gameScene, gameOverScene, gameInfo, gamePaused;
 	let message, info, paused, model, score, tiles = [];
 	let mrBig, buddy;
@@ -104,11 +106,11 @@
 		//scene.addChild(label);
 
 		mrBig = new PIXI.Sprite(PIXI.Texture.WHITE);
-		mrBig.tint = 0x00ff00;
+		mrBig.tint = 0x006600;
 		mrBig.width = 100;
 		mrBig.height = 100;
 		mrBig.anchor.set(0.5);
-		mrBig.position.set(logicalWidth / 2, 50);
+		mrBig.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		scene.addChild(mrBig);
 
 		buddy = new PIXI.Sprite(PIXI.Texture.WHITE);
@@ -116,7 +118,7 @@
 		buddy.width = 50;
 		buddy.height = 50;
 		buddy.anchor.set(0.5);
-		buddy.position.set(logicalWidth / 2, 50);
+		buddy.position.set(logicalWidth / 2, logicalHeight - H0);
 		scene.addChild(buddy);
 
 		return scene;
