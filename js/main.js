@@ -31,6 +31,14 @@
 		e.preventDefault();
 	});
 
+	let curScene = null;
+	function setScene(scene) {
+		if (curScene) curScene.exit();
+		curScene = scene;
+		if (curScene) curScene.enter();
+		console.console.log(paused);
+	}
+
 	PIXI.loader
 		.add("images/images.json")
 		.load(setup);
@@ -68,6 +76,22 @@
 		gameInfo = addGameInfo();
 		gamePaused = addGamePaused();
 
+		let btn = getButton(254, 64, 0x333333);
+		btn.anchor.set(0.5);
+		btn.position.set(logicalWidth / 2, 150);
+		scene.addChild(btn);
+
+		btn.click = ()=>{
+			//resetGame();
+
+			setScene(gameOverScene);
+		};
+
+		let label = new PIXI.Text("End Game", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		label.anchor.set(0.5);
+		label.position.set(logicalWidth / 2, 150);
+		scene.addChild(label);
+
 		return scene;
 	}
 
@@ -97,9 +121,11 @@
 		scene.addChild(btn);
 
 		btn.click = ()=>{
-			paused = true;
-			gameInfo.visible = false;
-			gamePaused.visible = true;
+			//paused = true;
+			//gameInfo.visible = false;
+			//gamePaused.visible = true;
+
+			setScene(gamePaused);
 		};
 
 		let label = new PIXI.Text("Стоп", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
@@ -136,9 +162,11 @@
 		scene.addChild(btn1);
 
 		btn1.click = ()=>{
-			paused = false;
-			gameInfo.visible = true;
-			gamePaused.visible = false;
+			//paused = false;
+			//gameInfo.visible = true;
+			//gamePaused.visible = false;
+
+			setScene(gameInfo);
 		};
 
 		let label1 = new PIXI.Text("Continue", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
@@ -152,8 +180,10 @@
 		scene.addChild(btn2);
 
 		btn2.click = ()=>{
-			gamePaused.visible = false;
-			resetGame();
+			//gamePaused.visible = false;
+			//resetGame();
+
+			setScene(gameInfo);
 		};
 
 		let label2 = new PIXI.Text("New Game", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
@@ -189,7 +219,9 @@
 		scene.addChild(btn);
 
 		btn.click = ()=>{
-			resetGame();
+			//resetGame();
+
+			setScene(gameInfo);
 		};
 
 		let label = new PIXI.Text("Play Game", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
