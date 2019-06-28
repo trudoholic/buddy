@@ -124,7 +124,7 @@
 		mrBig.anchor.set(0.5);
 		//mrBig.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		mrBig.position.set(0, 0);
-		world.addChild(mrBig);
+		//world.addChild(mrBig);
 
 		buddy = new PIXI.Sprite(PIXI.Texture.WHITE);
 		buddy.tint = 0xff0000;
