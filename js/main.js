@@ -110,14 +110,20 @@
 
 		scene.enter = ()=>{
 			//paused = false;
-			console.log("enter:", this.name);
-			this.visible = true;
+			//console.log("enter:", this.name);
+			//this.visible = true;
+
+			console.log("enter:", scene.name);
+			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
-			console.log("exit:", this.name);
-			this.visible = false;
+			//console.log("exit:", this.name);
+			//this.visible = false;
+
+			console.log("exit:", scene.name);
+			scene.visible = false;
 		};
 
 		info = new PIXI.Text("Score: 0", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
