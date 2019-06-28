@@ -3,6 +3,7 @@
 
 	let mainContainer, gameScene, gameOverScene, gameInfo, gamePaused;
 	let message, info, paused, model, score, tiles = [];
+	let mrBig, buddy;
 
 	PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 	const app = new PIXI.Application({
@@ -88,7 +89,7 @@
 
 		//let btn = getButton(254, 64, 0x333333);
 		let btn = getButton(logicalWidth-16, logicalHeight-16, 0x3333ff);
-		btn.anchor.set(0.5);
+		//btn.anchor.set(0.5);
 		//btn.position.set(logicalWidth / 2, 150);
 		btn.position.set(logicalWidth/2, logicalHeight/2);
 		scene.addChild(btn);
@@ -101,6 +102,18 @@
 		label.anchor.set(0.5);
 		label.position.set(logicalWidth / 2, 150);
 		//scene.addChild(label);
+
+		mrBig = new PIXI.Sprite(PIXI.Texture.WHITE);
+		mrBig.tint = 0x00ff00;
+		mrBig.width = 100;
+		mrBig.height = 100;
+		mrBig.anchor.set(0.5);
+
+		buddy = new PIXI.Sprite(PIXI.Texture.WHITE);
+		buddy.tint = 0xff0000;
+		buddy.width = 50;
+		buddy.height = 50;
+		buddy.anchor.set(0.5);
 
 		return scene;
 	}
@@ -136,7 +149,7 @@
 		scene.addChild(info);
 
 		let btn = getButton(254, 64, 0x333333);
-		btn.anchor.set(0.5);
+		//btn.anchor.set(0.5);
 		btn.position.set(logicalWidth / 2, 150);
 		scene.addChild(btn);
 
@@ -181,7 +194,7 @@
 		scene.addChild(t);
 
 		let btn1 = getButton(230, 64, 0x333333);
-		btn1.anchor.set(0.5);
+		//btn1.anchor.set(0.5);
 		btn1.position.set(logicalWidth / 2 - 120, 150);
 		scene.addChild(btn1);
 
@@ -199,7 +212,7 @@
 		scene.addChild(label1);
 
 		let btn2 = getButton(230, 64, 0x333333);
-		btn2.anchor.set(0.5);
+		//btn2.anchor.set(0.5);
 		btn2.position.set(logicalWidth / 2 + 120, 150);
 		scene.addChild(btn2);
 
@@ -243,7 +256,7 @@
 		scene.addChild(message);
 
 		let btn = getButton(254, 64, 0x333333);
-		btn.anchor.set(0.5);
+		//btn.anchor.set(0.5);
 		btn.position.set(logicalWidth / 2, 150);
 		scene.addChild(btn);
 
@@ -266,6 +279,7 @@
 		btn.tint = tint;
 		btn.width = width;
 		btn.height = height;
+		btn.anchor.set(0.5);
 		btn.buttonMode = true;
 		btn.interactive = true;
 		return btn;
