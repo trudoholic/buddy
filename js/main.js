@@ -320,7 +320,7 @@
 		buddy.y += (goDown? 1: -1) * 5;
 		if (buddy.y < logicalHeight - H0 - DH) goDown = true;
 		else if (buddy.y > logicalHeight) setScene(gamePaused);
-		app.renderer.render(stage);
+		//app.renderer.render(stage);
 	}
 
 	function toss() {
