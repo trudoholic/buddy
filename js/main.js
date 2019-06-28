@@ -99,7 +99,7 @@
 		scene.addChild(btn);
 
 		btn.click = ()=>{
-			setScene(gamePaused);
+			//setScene(gamePaused); //???
 		};
 
 		let label = new PIXI.Text("Проиграть", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
@@ -317,8 +317,9 @@
 	function gameLoop() {
 		if (paused) return;
 		requestAnimationFrame(gameLoop);
-		buddy.y += (goDown? 1: -1) * 10;
+		buddy.y += (goDown? 1: -1) * 2;
 		if (buddy.y < logicalHeight - H0 - DH) goDown = true;
+		else if (buddy.y > logicalHeight) setScene(gamePaused);
 		renderer.render(stage); }
 
 	//gameLoop();
