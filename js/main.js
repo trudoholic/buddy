@@ -110,12 +110,7 @@
 		world.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		scene.addChild(world);
 
-		let t = new PIXI.Sprite(PIXI.Texture.WHITE);
-		t.width = 100;
-		t.height = 100;
-		t.anchor.set(0.5);
-		t.position.set(0, 0);
-		//world.addChild(t);
+		world.scale.set(.5);
 
 		mrBig = new PIXI.Sprite(PIXI.Texture.WHITE);
 		mrBig.tint = 0x006600;
