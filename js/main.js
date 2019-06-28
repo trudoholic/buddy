@@ -85,7 +85,7 @@
 		gameInfo = addGameInfo();
 		gamePaused = addGamePaused();
 
-		let i = new PIXI.Text("Game Scene", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		let i = new PIXI.Text("В игре", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		i.anchor.set(0.5);
 		i.position.set(logicalWidth / 2, 64);
 		scene.addChild(i);
@@ -101,7 +101,7 @@
 			setScene(gameOverScene);
 		};
 
-		let label = new PIXI.Text("End Game", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		let label = new PIXI.Text("Проиграть", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label.anchor.set(0.5);
 		label.position.set(logicalWidth / 2, 150);
 		scene.addChild(label);
@@ -134,7 +134,7 @@
 			scene.visible = false;
 		};
 
-		info = new PIXI.Text("Game Info", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		info = new PIXI.Text("Инфо", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		info.anchor.set(0.5);
 		info.position.set(logicalWidth / 2, 64);
 		scene.addChild(info);
@@ -179,7 +179,7 @@
 			scene.visible = false;
 		};
 
-		let t = new PIXI.Text("Game Paused", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		let t = new PIXI.Text("Пауза...", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		t.anchor.set(0.5);
 		t.position.set(logicalWidth / 2, 64);
 		scene.addChild(t);
@@ -197,7 +197,7 @@
 			setScene(gameInfo);
 		};
 
-		let label1 = new PIXI.Text("Continue", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		let label1 = new PIXI.Text("Дальше", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label1.anchor.set(0.5);
 		label1.position.set(logicalWidth / 2 - 120, 150);
 		scene.addChild(label1);
@@ -214,7 +214,7 @@
 			setScene(gameInfo);
 		};
 
-		let label2 = new PIXI.Text("New1 Game", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		let label2 = new PIXI.Text("Новая", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label2.anchor.set(0.5);
 		label2.position.set(logicalWidth / 2 + 120, 150);
 		scene.addChild(label2);
