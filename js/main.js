@@ -33,6 +33,7 @@
 
 	let curScene = null;
 	function setScene(scene) {
+		console.log(curScene? curScene.name: "--", scene? scene.name: "--");
 		if (curScene) curScene.exit();
 		curScene = scene;
 		if (curScene) curScene.enter();
@@ -62,6 +63,8 @@
 	function addGameScene() {
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
+
+		scene.name = "gameScene";
 
 		scene.enter = ()=>{
 			//paused = false;
@@ -99,6 +102,8 @@
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
 		scene.visible = false;
+
+		scene.name = "gameInfo";
 
 		scene.enter = ()=>{
 			//paused = false;
@@ -140,6 +145,8 @@
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
 		scene.visible = false;
+
+		scene.name = "gamePaused";
 
 		scene.enter = ()=>{
 			//paused = false;
@@ -197,6 +204,8 @@
 	function addGameOverScene() {
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
+
+		scene.name = "gameOverScene";
 
 		scene.enter = ()=>{
 			//paused = false;
