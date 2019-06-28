@@ -115,7 +115,7 @@
 		t.height = 100;
 		t.anchor.set(0.5);
 		t.position.set(0, 0);
-		world.addChild(t);
+		//world.addChild(t);
 
 		mrBig = new PIXI.Sprite(PIXI.Texture.WHITE);
 		mrBig.tint = 0x006600;
@@ -123,7 +123,7 @@
 		mrBig.height = 100;
 		mrBig.anchor.set(0.5);
 		//mrBig.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
-		mrBig.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
+		mrBig.position.set(0, 0);
 		world.addChild(mrBig);
 
 		buddy = new PIXI.Sprite(PIXI.Texture.WHITE);
@@ -132,7 +132,7 @@
 		buddy.height = 50;
 		buddy.anchor.set(0.5);
 		//buddy.position.set(logicalWidth / 2, logicalHeight - H0);
-		buddy.position.set(logicalWidth / 2, logicalHeight - H0);
+		buddy.position.set(0, -H0);
 		world.addChild(buddy);
 
 		return scene;
