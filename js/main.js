@@ -16,7 +16,7 @@
 	app.renderer.autoResize = true;
 
 	const logicalWidth  = 500;
-	const logicalHeight = 500;
+	const logicalHeight = 1500;
 	const resizeHandler = () => {
 	  const scaleFactor = Math.min(
 		window.innerWidth / logicalWidth,
@@ -43,12 +43,6 @@
 	PIXI.loader
 		.add("images/images.json")
 		.load(setup);
-
-	const cfg = {
-		rows: 6,
-		cols: 6,
-		numBombs: 5
-	}
 
 	function setup() {
 		mainContainer = new PIXI.Container();
