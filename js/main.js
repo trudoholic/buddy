@@ -109,14 +109,14 @@
 		world.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		scene.addChild(world);
 
-		for (let n = 1; n < 10; n = 2*n)
+		for (let n = 1; n < 300; n = 2*n)
 		{
 			let t = new PIXI.Sprite(PIXI.Texture.WHITE);
 			t.tint = 0x333333;
 			t.width = 100*n;
 			t.height = 100*n;
 			t.anchor.set(0.5);
-			t.position.set(0, -200*n);
+			t.position.set(0, -500*n);
 			world.addChild(t);
 		}
 
