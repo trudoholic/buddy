@@ -330,6 +330,7 @@
 		buddy.y += (goDown? 1: -1) * 5;
 
 		//(buddy.y < 0)? world.scale.set(.5): world.scale.set(1);
+		(buddy.y < - logicalHeight)? world.scale.set(.5): world.scale.set(1);
 
 		//if (buddy.y < logicalHeight - H0 - DH) goDown = true;
 		//else if (buddy.y > logicalHeight) setScene(gamePaused);
