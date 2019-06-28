@@ -55,7 +55,6 @@
 		gameScene = addGameScene();
 		gameInfo = addGameInfo();
 		gamePaused = addGamePaused();
-
 		gameOverScene = addGameOverScene();
 
 		paused = true;
@@ -65,45 +64,22 @@
 	function addGameScene() {
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
-
 		scene.name = "gameScene";
 		scene.visible = false;
 
 		scene.enter = ()=>{
-			//paused = false;
-			//console.log("enter:", scene.name);
 			scene.visible = true;
-
 			startGame(); //!!!
 		};
-
 		scene.exit = ()=>{
 			paused = true;
-			//console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
-		//gameInfo = addGameInfo();
-		//gamePaused = addGamePaused();
-
-		let i = new PIXI.Text("В игре", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
-		i.anchor.set(0.5);
-		i.position.set(logicalWidth / 2, 64);
-		//scene.addChild(i);
-
-		//let btn = getButton(254, 64, 0x333333);
 		let btn = getButton(logicalWidth-16, logicalHeight-16, 0x3333ff);
-		//btn.anchor.set(0.5);
-		//btn.position.set(logicalWidth / 2, 150);
 		btn.position.set(logicalWidth/2, logicalHeight/2);
 		scene.addChild(btn);
-
 		btn.click = ()=>{ toss() };
-
-		let label = new PIXI.Text("Проиграть", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
-		label.anchor.set(0.5);
-		label.position.set(logicalWidth / 2, 150);
-		//scene.addChild(label);
 
 		world = new PIXI.Container();
 		world.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
@@ -142,25 +118,13 @@
 	function addGameInfo() {
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
-
 		scene.name = "gameInfo";
 		scene.visible = false;
 
 		scene.enter = ()=>{
-			//paused = false;
-			//console.log("enter:", this.name);
-			//this.visible = true;
-
-			//console.log("enter:", scene.name);
 			scene.visible = true;
 		};
-
 		scene.exit = ()=>{
-			//paused = true;
-			//console.log("exit:", this.name);
-			//this.visible = false;
-
-			//console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
@@ -170,15 +134,10 @@
 		scene.addChild(info);
 
 		let btn = getButton(254, 64, 0x333333);
-		//btn.anchor.set(0.5);
 		btn.position.set(logicalWidth / 2, 150);
 		scene.addChild(btn);
 
 		btn.click = ()=>{
-			//paused = true;
-			//gameInfo.visible = false;
-			//gamePaused.visible = true;
-
 			setScene(gameScene);
 		};
 
@@ -193,19 +152,13 @@
 	function addGamePaused() {
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
-
 		scene.name = "gamePaused";
 		scene.visible = false;
 
 		scene.enter = ()=>{
-			//paused = false;
-			//console.log("enter:", scene.name);
 			scene.visible = true;
 		};
-
 		scene.exit = ()=>{
-			//paused = true;
-			//console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
@@ -215,15 +168,10 @@
 		scene.addChild(t);
 
 		let btn1 = getButton(230, 64, 0x333333);
-		//btn1.anchor.set(0.5);
 		btn1.position.set(logicalWidth / 2 - 120, 150);
 		scene.addChild(btn1);
 
 		btn1.click = ()=>{
-			//paused = false;
-			//gameInfo.visible = true;
-			//gamePaused.visible = false;
-
 			setScene(gameInfo);
 		};
 
@@ -233,14 +181,10 @@
 		scene.addChild(label1);
 
 		let btn2 = getButton(230, 64, 0x333333);
-		//btn2.anchor.set(0.5);
 		btn2.position.set(logicalWidth / 2 + 120, 150);
 		scene.addChild(btn2);
 
 		btn2.click = ()=>{
-			//gamePaused.visible = false;
-			//resetGame();
-
 			setScene(gameScene);
 		};
 
@@ -255,19 +199,13 @@
 	function addGameOverScene() {
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
-
 		scene.name = "gameOverScene";
 		scene.visible = false;
 
 		scene.enter = ()=>{
-			//paused = false;
-			//console.log("enter:", scene.name);
 			scene.visible = true;
 		};
-
 		scene.exit = ()=>{
-			//paused = true;
-			//console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
@@ -277,13 +215,10 @@
 		scene.addChild(message);
 
 		let btn = getButton(254, 64, 0x333333);
-		//btn.anchor.set(0.5);
 		btn.position.set(logicalWidth / 2, 150);
 		scene.addChild(btn);
 
 		btn.click = ()=>{
-			//resetGame();
-
 			setScene(gameScene);
 		};
 
@@ -306,6 +241,7 @@
 		return btn;
 	}
 
+/*/
 	function resetGame() {
 		score = 0;
 		info.setText("Score: 0");
@@ -320,6 +256,7 @@
 		gameInfo.visible = false;
 		gameOverScene.visible = true;
 	}
+	/*/
 
 	function startGame() {
 		paused = false;
@@ -337,7 +274,6 @@
 		h += (goDown? -1: 1) * 5;
 		buddy.y = -h;
 
-		//(h > logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
 		k = (logicalHeight - 250) / h;
 		if (k > 1) k = 1;
 		world.scale.set(k);
@@ -356,7 +292,5 @@
 			DH *= 1.41;
 		}
 	}
-
-	//gameLoop();
 
 })();
