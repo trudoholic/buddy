@@ -102,8 +102,8 @@
 			//setScene(gamePaused); //???
 			if (buddy.y > logicalHeight - H0)
 			{
-				goDown = false;
-				DH += 50;
+				//goDown = false;
+				//DH += 50;
 			}
 		};
 
