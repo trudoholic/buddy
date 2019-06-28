@@ -68,6 +68,7 @@
 		mainContainer.addChild(scene);
 
 		scene.name = "gameScene";
+		scene.visible = false;
 
 		scene.enter = ()=>{
 			//paused = false;
@@ -111,9 +112,9 @@
 	function addGameInfo() {
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
-		scene.visible = false;
 
 		scene.name = "gameInfo";
+		scene.visible = false;
 
 		scene.enter = ()=>{
 			//paused = false;
@@ -162,9 +163,9 @@
 	function addGamePaused() {
 		let scene = new PIXI.Container();
 		mainContainer.addChild(scene);
-		scene.visible = false;
 
 		scene.name = "gamePaused";
+		scene.visible = false;
 
 		scene.enter = ()=>{
 			//paused = false;
@@ -226,6 +227,7 @@
 		mainContainer.addChild(scene);
 
 		scene.name = "gameOverScene";
+		scene.visible = false;
 
 		scene.enter = ()=>{
 			//paused = false;
