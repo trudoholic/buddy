@@ -341,7 +341,8 @@
 	}
 
 	function toss() {
-		if (buddy.y > logicalHeight - H0)
+		//if (buddy.y > logicalHeight - H0)
+		if (buddy.y > - H0)
 		{
 			goDown = false;
 			DH += 100;
