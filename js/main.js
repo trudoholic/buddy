@@ -33,7 +33,7 @@
 
 	let curScene = null;
 	function setScene(scene) {
-		console.log(curScene? curScene.name: "--", scene? scene.name: "--");
+		console.log(curScene? curScene.name: "--", ">", scene? scene.name: "--");
 		if (curScene) curScene.exit();
 		curScene = scene;
 		if (curScene) curScene.enter();
@@ -196,7 +196,7 @@
 			setScene(gameInfo);
 		};
 
-		let label2 = new PIXI.Text("New Game", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		let label2 = new PIXI.Text("New1 Game", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label2.anchor.set(0.5);
 		label2.position.set(logicalWidth / 2 + 120, 150);
 		scene.addChild(label2);
@@ -220,7 +220,7 @@
 			this.visible = false;
 		};
 
-		message = new PIXI.Text("New Game", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		message = new PIXI.Text("New2 Game", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		message.anchor.set(0.5);
 		message.position.set(logicalWidth / 2, 64);
 		scene.addChild(message);
