@@ -71,16 +71,23 @@
 
 		scene.enter = ()=>{
 			//paused = false;
+			console.log("enter:", scene.name);
 			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
+			console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
 		gameInfo = addGameInfo();
 		gamePaused = addGamePaused();
+
+		let i = new PIXI.Text("Game Scene", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		i.anchor.set(0.5);
+		i.position.set(logicalWidth / 2, 64);
+		scene.addChild(i);
 
 		let btn = getButton(254, 64, 0x333333);
 		btn.anchor.set(0.5);
@@ -126,7 +133,7 @@
 			scene.visible = false;
 		};
 
-		info = new PIXI.Text("Score: 0", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		info = new PIXI.Text("Game Info", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		info.anchor.set(0.5);
 		info.position.set(logicalWidth / 2, 64);
 		scene.addChild(info);
@@ -161,15 +168,17 @@
 
 		scene.enter = ()=>{
 			//paused = false;
+			console.log("enter:", scene.name);
 			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
+			console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
-		let t = new PIXI.Text("Paused...", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		let t = new PIXI.Text("Game Paused", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		t.anchor.set(0.5);
 		t.position.set(logicalWidth / 2, 64);
 		scene.addChild(t);
@@ -220,15 +229,17 @@
 
 		scene.enter = ()=>{
 			//paused = false;
+			console.log("enter:", scene.name);
 			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
+			console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
-		message = new PIXI.Text("New2 Game", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		message = new PIXI.Text("Game Over", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		message.anchor.set(0.5);
 		message.position.set(logicalWidth / 2, 64);
 		scene.addChild(message);
