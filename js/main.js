@@ -134,7 +134,7 @@
 			scene.visible = false;
 		};
 
-		info = new PIXI.Text("Инфо", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
+		info = new PIXI.Text("Новая игра", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		info.anchor.set(0.5);
 		info.position.set(logicalWidth / 2, 64);
 		scene.addChild(info);
@@ -149,10 +149,10 @@
 			//gameInfo.visible = false;
 			//gamePaused.visible = true;
 
-			setScene(gamePaused);
+			setScene(gameScene);
 		};
 
-		let label = new PIXI.Text("Стоп", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		let label = new PIXI.Text("Начать", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label.anchor.set(0.5);
 		label.position.set(logicalWidth / 2, 150);
 		scene.addChild(label);
