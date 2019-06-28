@@ -59,7 +59,8 @@
 		gameOverScene = addGameOverScene();
 		paused = true;
 
-		setScene(gameScene);
+		//setScene(gameScene);
+		setScene(gameInfo);
 	}
 
 	function addGameScene() {
