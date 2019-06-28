@@ -1,11 +1,11 @@
 // annonymouse function to put all variables local scope by default.
 (function(){
 
-	const H0 = 250, DH = 250;
+	const H0 = 250;
 
 	let mainContainer, gameScene, gameOverScene, gameInfo, gamePaused;
 	let message, info, paused, model, score, tiles = [];
-	let mrBig, buddy, goDown;
+	let mrBig, buddy, goDown, DH = 250;
 
 	PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 	const app = new PIXI.Application({
