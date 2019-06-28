@@ -317,7 +317,7 @@
 	function gameLoop() {
 		if (paused) return;
 		requestAnimationFrame(gameLoop);
-		buddy.y += (goDown? -1: 1) * 10;
+		buddy.y += (goDown? 1: -1) * 10;
 		if (buddy.y < logicalHeight - H0 - DH) goDown = true;
 		renderer.render(stage); }
 
