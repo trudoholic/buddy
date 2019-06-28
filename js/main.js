@@ -197,7 +197,7 @@
 			setScene(gameInfo);
 		};
 
-		let label1 = new PIXI.Text("Дальше", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		let label1 = new PIXI.Text("Новая", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label1.anchor.set(0.5);
 		label1.position.set(logicalWidth / 2 - 120, 150);
 		scene.addChild(label1);
@@ -214,7 +214,7 @@
 			setScene(gameScene);
 		};
 
-		let label2 = new PIXI.Text("Новая", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		let label2 = new PIXI.Text("Дальше", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label2.anchor.set(0.5);
 		label2.position.set(logicalWidth / 2 + 120, 150);
 		scene.addChild(label2);
