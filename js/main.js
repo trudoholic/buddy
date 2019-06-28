@@ -57,9 +57,9 @@
 
 		gameScene = addGameScene();
 		gameOverScene = addGameOverScene();
-		paused = true;
 
 		setScene(gameInfo);
+		paused = true;
 	}
 
 	function addGameScene() {
@@ -70,14 +70,14 @@
 		scene.visible = false;
 
 		scene.enter = ()=>{
-			//paused = false;
-			console.log("enter:", scene.name);
+			paused = false;
+			//console.log("enter:", scene.name);
 			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
-			//paused = true;
-			console.log("exit:", scene.name);
+			paused = true;
+			//console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
@@ -120,7 +120,7 @@
 			//console.log("enter:", this.name);
 			//this.visible = true;
 
-			console.log("enter:", scene.name);
+			//console.log("enter:", scene.name);
 			scene.visible = true;
 		};
 
@@ -129,7 +129,7 @@
 			//console.log("exit:", this.name);
 			//this.visible = false;
 
-			console.log("exit:", scene.name);
+			//console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
@@ -168,13 +168,13 @@
 
 		scene.enter = ()=>{
 			//paused = false;
-			console.log("enter:", scene.name);
+			//console.log("enter:", scene.name);
 			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
-			console.log("exit:", scene.name);
+			//console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
@@ -230,13 +230,13 @@
 
 		scene.enter = ()=>{
 			//paused = false;
-			console.log("enter:", scene.name);
+			//console.log("enter:", scene.name);
 			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
-			console.log("exit:", scene.name);
+			//console.log("exit:", scene.name);
 			scene.visible = false;
 		};
 
