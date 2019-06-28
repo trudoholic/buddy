@@ -106,6 +106,8 @@
 		//scene.addChild(label);
 
 		world = new PIXI.Container();
+		world.anchor.set(0.5, 1);
+		world.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		scene.addChild(world);
 
 		let t = new PIXI.Sprite(PIXI.Texture.WHITE);
@@ -120,6 +122,7 @@
 		mrBig.width = 100;
 		mrBig.height = 100;
 		mrBig.anchor.set(0.5);
+		//mrBig.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		mrBig.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		world.addChild(mrBig);
 
@@ -128,6 +131,7 @@
 		buddy.width = 50;
 		buddy.height = 50;
 		buddy.anchor.set(0.5);
+		//buddy.position.set(logicalWidth / 2, logicalHeight - H0);
 		buddy.position.set(logicalWidth / 2, logicalHeight - H0);
 		world.addChild(buddy);
 
