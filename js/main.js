@@ -100,6 +100,11 @@
 
 		btn.click = ()=>{
 			//setScene(gamePaused); //???
+			if (buddy.y > logicalHeight - H0)
+			{
+				goDown = false;
+				DH += 50;
+			}
 		};
 
 		let label = new PIXI.Text("Проиграть", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
@@ -311,6 +316,8 @@
 	function startGame() {
 		paused = false;
 		goDown = false;
+		DH = 250;
+		buddy.position.set(logicalWidth / 2, logicalHeight - H0);
 		gameLoop();
 	}
 
