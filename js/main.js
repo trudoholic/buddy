@@ -76,15 +76,15 @@
 		btn.position.set(logicalWidth / 2, 150);
 		scene.addChild(btn);
 
-		btn.buttonMode = true;
-		btn.interactive = true;
+		//btn.buttonMode = true;
+		//btn.interactive = true;
 		btn.click = ()=>{
 			paused = true;
 			gameInfo.visible = false;
 			gamePaused.visible = true;
 		};
 
-		let label = new PIXI.Text("Pause", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
+		let label = new PIXI.Text("Стоп", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label.anchor.set(0.5);
 		label.position.set(logicalWidth / 2, 150);
 		scene.addChild(label);
@@ -107,8 +107,8 @@
 		btn1.position.set(logicalWidth / 2 - 120, 150);
 		scene.addChild(btn1);
 
-		btn1.buttonMode = true;
-		btn1.interactive = true;
+		//btn1.buttonMode = true;
+		//btn1.interactive = true;
 		btn1.click = ()=>{
 			paused = false;
 			gameInfo.visible = true;
@@ -125,8 +125,8 @@
 		btn2.position.set(logicalWidth / 2 + 120, 150);
 		scene.addChild(btn2);
 
-		btn2.buttonMode = true;
-		btn2.interactive = true;
+		//btn2.buttonMode = true;
+		//btn2.interactive = true;
 		btn2.click = ()=>{
 			gamePaused.visible = false;
 			resetGame();
@@ -154,8 +154,8 @@
 		btn.position.set(logicalWidth / 2, 150);
 		scene.addChild(btn);
 
-		btn.buttonMode = true;
-		btn.interactive = true;
+		//btn.buttonMode = true;
+		//btn.interactive = true;
 		btn.click = ()=>{
 			resetGame();
 		};
@@ -169,11 +169,13 @@
 	}
 
 	function getButton(width, height, tint) {
-		const sprite = new PIXI.Sprite(PIXI.Texture.WHITE);
-		sprite.tint = tint;
-		sprite.width = width;
-		sprite.height = height;
-		return sprite;
+		const btn = new PIXI.Sprite(PIXI.Texture.WHITE);
+		btn.tint = tint;
+		btn.width = width;
+		btn.height = height;
+		btn.buttonMode = true;
+		btn.interactive = true;
+		return btn;
 	}
 
 	function resetGame() {
