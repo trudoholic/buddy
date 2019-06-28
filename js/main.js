@@ -73,6 +73,8 @@
 			paused = false;
 			//console.log("enter:", scene.name);
 			scene.visible = true;
+
+			gameLoop(); //!!!
 		};
 
 		scene.exit = ()=>{
@@ -305,5 +307,13 @@
 		gameInfo.visible = false;
 		gameOverScene.visible = true;
 	}
+
+	function gameLoop() {
+		if (paused) return;
+		requestAnimationFrame(gameLoop);
+		buddy.y -= 1;
+		renderer.render(stage); }
+
+	//gameLoop();
 
 })();
