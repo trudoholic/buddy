@@ -324,7 +324,7 @@
 		paused = false;
 		goDown = false;
 		DH = 250;
-		buddy.position.set(logicalWidth / 2, logicalHeight - H0);
+		//buddy.position.set(logicalWidth / 2, logicalHeight - H0);
 		//gameLoop();
 	}
 
