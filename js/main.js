@@ -106,11 +106,19 @@
 		//scene.addChild(label);
 
 		world = new PIXI.Container();
-		//world.anchor.set(0.5, 1);
 		world.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		scene.addChild(world);
 
-		//world.scale.set(.5);
+		for (let n = 1; n < 10; n = 2*n)
+		{
+			let t = new PIXI.Sprite(PIXI.Texture.WHITE);
+			t.tint = 0x333333;
+			t.width = 10*n;
+			t.height = 10*n;
+			t.anchor.set(0.5);
+			t.position.set(0, -100*n);
+			world.addChild(t);
+		}
 
 		mrBig = new PIXI.Sprite(PIXI.Texture.WHITE);
 		mrBig.tint = 0x006600;
@@ -330,7 +338,7 @@
 		buddy.y = -h;
 
 		//(h > logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
-		k = (logicalHeight - 100) / h;
+		k = (logicalHeight - 250) / h;
 		if (k > 1) k = 1;
 		world.scale.set(k);
 
@@ -344,7 +352,8 @@
 		//if (h < H0)
 		{
 			goDown = false;
-			DH += 100;
+			//DH += 100;
+			DH *= 2;
 		}
 	}
 
