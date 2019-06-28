@@ -241,23 +241,6 @@
 		return btn;
 	}
 
-/*/
-	function resetGame() {
-		score = 0;
-		info.setText("Score: 0");
-		gameInfo.visible = true;
-		gameOverScene.visible = false;
-		paused = false;
-	}
-
-	function endGame(win) {
-		paused = true;
-		message.setText(win? "You won!": "You lost!");
-		gameInfo.visible = false;
-		gameOverScene.visible = true;
-	}
-	/*/
-
 	function startGame() {
 		paused = false;
 		goDown = false;
