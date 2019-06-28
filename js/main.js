@@ -1,11 +1,11 @@
 // annonymouse function to put all variables local scope by default.
 (function(){
 
-	const H0 = 250;
+	const H0 = 250, DH = 250;
 
 	let mainContainer, gameScene, gameOverScene, gameInfo, gamePaused;
 	let message, info, paused, model, score, tiles = [];
-	let mrBig, buddy;
+	let mrBig, buddy, goDown;
 
 	PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 	const app = new PIXI.Application({
@@ -70,11 +70,11 @@
 		scene.visible = false;
 
 		scene.enter = ()=>{
-			paused = false;
+			//paused = false;
 			//console.log("enter:", scene.name);
 			scene.visible = true;
 
-			gameLoop(); //!!!
+			startGame(); //!!!
 		};
 
 		scene.exit = ()=>{
@@ -308,10 +308,17 @@
 		gameOverScene.visible = true;
 	}
 
+	function startGame() {
+		paused = false;
+		goDown = false;
+		gameLoop();
+	}
+
 	function gameLoop() {
 		if (paused) return;
 		requestAnimationFrame(gameLoop);
-		buddy.y -= 1;
+		buddy.y += (goDown? -1: 1) * 10;
+		if (buddy.y < logicalHeight - H0 - DH) goDown = true;
 		renderer.render(stage); }
 
 	//gameLoop();
