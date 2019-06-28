@@ -16,7 +16,7 @@
 	app.renderer.autoResize = true;
 
 	const logicalWidth  = 500;
-	const logicalHeight = 1500;
+	const logicalHeight = 1000;
 	const resizeHandler = () => {
 	  const scaleFactor = Math.min(
 		window.innerWidth / logicalWidth,
