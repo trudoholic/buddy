@@ -349,7 +349,7 @@
 	}
 
 	function toss() {
-		//if (h < H0)
+		if (h < 2 * H0)
 		{
 			goDown = false;
 			//DH += 100;
