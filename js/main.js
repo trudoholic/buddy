@@ -330,7 +330,7 @@
 		buddy.y = -h;
 
 		//(h > logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
-		k = (logicalHeight - 50) / h;
+		k = (logicalHeight - 100) / h;
 		if (k > 1) k = 1;
 		world.scale.set(k);
 
@@ -341,7 +341,7 @@
 	}
 
 	function toss() {
-		if (h < H0)
+		//if (h < H0)
 		{
 			goDown = false;
 			DH += 100;
