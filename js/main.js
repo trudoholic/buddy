@@ -56,6 +56,9 @@
 		resizeHandler();
 
 		gameScene = addGameScene();
+		gameInfo = addGameInfo();
+		gamePaused = addGamePaused();
+
 		gameOverScene = addGameOverScene();
 
 		paused = true;
@@ -81,29 +84,29 @@
 			scene.visible = false;
 		};
 
-		gameInfo = addGameInfo();
-		gamePaused = addGamePaused();
+		//gameInfo = addGameInfo();
+		//gamePaused = addGamePaused();
 
 		let i = new PIXI.Text("В игре", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
 		i.anchor.set(0.5);
 		i.position.set(logicalWidth / 2, 64);
-		scene.addChild(i);
+		//scene.addChild(i);
 
-		let btn = getButton(254, 64, 0x333333);
+		//let btn = getButton(254, 64, 0x333333);
+		let btn = getButton(logicalWidth-16, logicalHeight-16, 0x3333ff);
 		btn.anchor.set(0.5);
-		btn.position.set(logicalWidth / 2, 150);
+		//btn.position.set(logicalWidth / 2, 150);
+		btn.position.set(logicalWidth/2, logicalHeight/2);
 		scene.addChild(btn);
 
 		btn.click = ()=>{
-			//resetGame();
-
 			setScene(gamePaused);
 		};
 
 		let label = new PIXI.Text("Проиграть", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label.anchor.set(0.5);
 		label.position.set(logicalWidth / 2, 150);
-		scene.addChild(label);
+		//scene.addChild(label);
 
 		return scene;
 	}
