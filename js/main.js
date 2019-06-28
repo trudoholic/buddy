@@ -71,12 +71,12 @@
 
 		scene.enter = ()=>{
 			//paused = false;
-			this.visible = true;
+			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
-			this.visible = false;
+			scene.visible = false;
 		};
 
 		gameInfo = addGameInfo();
@@ -161,12 +161,12 @@
 
 		scene.enter = ()=>{
 			//paused = false;
-			this.visible = true;
+			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
-			this.visible = false;
+			scene.visible = false;
 		};
 
 		let t = new PIXI.Text("Paused...", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
@@ -220,12 +220,12 @@
 
 		scene.enter = ()=>{
 			//paused = false;
-			this.visible = true;
+			scene.visible = true;
 		};
 
 		scene.exit = ()=>{
 			//paused = true;
-			this.visible = false;
+			scene.visible = false;
 		};
 
 		message = new PIXI.Text("New2 Game", new PIXI.TextStyle({ fontFamily: "Futura", fontSize: 64, fill: "white"}));
