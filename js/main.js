@@ -98,14 +98,7 @@
 		btn.position.set(logicalWidth/2, logicalHeight/2);
 		scene.addChild(btn);
 
-		btn.click = ()=>{
-			//setScene(gamePaused); //???
-			if (buddy.y > logicalHeight - H0)
-			{
-				goDown = false;
-				DH += 50;
-			}
-		};
+		btn.click = ()=>{ toss() };
 
 		let label = new PIXI.Text("Проиграть", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
 		label.anchor.set(0.5);
@@ -324,10 +317,19 @@
 	function gameLoop() {
 		if (paused) return;
 		requestAnimationFrame(gameLoop);
-		buddy.y += (goDown? 1: -1) * 2;
+		buddy.y += (goDown? 1: -1) * 5;
 		if (buddy.y < logicalHeight - H0 - DH) goDown = true;
 		else if (buddy.y > logicalHeight) setScene(gamePaused);
-		renderer.render(stage); }
+		renderer.render(stage);
+	}
+
+	function toss() {
+		if (buddy.y > logicalHeight - H0)
+		{
+			goDown = false;
+			DH += 100;
+		}
+	}
 
 	//gameLoop();
 
