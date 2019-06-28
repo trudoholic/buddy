@@ -98,7 +98,7 @@
 		btn.click = ()=>{
 			//resetGame();
 
-			setScene(gameOverScene);
+			setScene(gamePaused);
 		};
 
 		let label = new PIXI.Text("Проиграть", new PIXI.TextStyle({ fontFamily: "Arial", fontSize: 32, fill: "white"}));
