@@ -113,10 +113,10 @@
 		{
 			let t = new PIXI.Sprite(PIXI.Texture.WHITE);
 			t.tint = 0x333333;
-			t.width = 10*n;
-			t.height = 10*n;
+			t.width = 100*n;
+			t.height = 100*n;
 			t.anchor.set(0.5);
-			t.position.set(0, -100*n);
+			t.position.set(0, -200*n);
 			world.addChild(t);
 		}
 
@@ -353,7 +353,7 @@
 		{
 			goDown = false;
 			//DH += 100;
-			DH *= 2;
+			DH *= 1.41;
 		}
 	}
 
