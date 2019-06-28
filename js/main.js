@@ -326,15 +326,14 @@
 		if (paused) return;
 		requestAnimationFrame(gameLoop);
 
-		//buddy.y += (goDown? 1: -1) * 5;
 		h += (goDown? -1: 1) * 5;
 		buddy.y = -h;
 
-		//(buddy.y < - logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
-		//if (buddy.y <  - H0 - DH) goDown = true;
-		//else if (buddy.y > 0) setScene(gamePaused);
+		//(h > logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
+		k = (logicalHeight - 50) / h;
+		if (k > 1) k = 1;
+		world.scale.set(k);
 
-		(h > logicalHeight * .75)? world.scale.set(.5): world.scale.set(1);
 		if (h >  H0 + DH) goDown = true;
 		else if (h < 0) setScene(gamePaused);
 
@@ -342,7 +341,6 @@
 	}
 
 	function toss() {
-		//if (buddy.y > - H0)
 		if (h < H0)
 		{
 			goDown = false;
