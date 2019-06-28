@@ -110,7 +110,7 @@
 		world.position.set(logicalWidth / 2, logicalHeight - 50 - 8);
 		scene.addChild(world);
 
-		world.scale.set(.5);
+		//world.scale.set(.5);
 
 		mrBig = new PIXI.Sprite(PIXI.Texture.WHITE);
 		mrBig.tint = 0x006600;
@@ -321,7 +321,7 @@
 		DH = 250;
 		//buddy.position.set(logicalWidth / 2, logicalHeight - H0);
 		buddy.position.set(0, -H0);
-		//gameLoop();
+		gameLoop();
 	}
 
 	function gameLoop() {
@@ -331,8 +331,12 @@
 
 		(buddy.y < 0)? world.scale.set(.5): world.scale.set(1);
 
-		if (buddy.y < logicalHeight - H0 - DH) goDown = true;
-		else if (buddy.y > logicalHeight) setScene(gamePaused);
+		//if (buddy.y < logicalHeight - H0 - DH) goDown = true;
+		//else if (buddy.y > logicalHeight) setScene(gamePaused);
+
+		if (buddy.y <  - H0 - DH) goDown = true;
+		else if (buddy.y > 0) setScene(gamePaused);
+
 		//app.renderer.render(stage);
 	}
 
