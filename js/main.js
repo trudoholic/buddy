@@ -112,7 +112,7 @@
 		t.width = 100;
 		t.height = 100;
 		t.anchor.set(0.5);
-		mrBig.position.set(0, 0);
+		t.position.set(0, 0);
 		world.addChild(t);
 
 		mrBig = new PIXI.Sprite(PIXI.Texture.WHITE);
